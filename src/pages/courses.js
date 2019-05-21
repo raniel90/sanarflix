@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Text, View, FlatList, TouchableOpacity, StyleSheet } from 'react-native'
 import api from '../services/api';
 import sortBy from 'lodash/sortBy';
+import Icon from 'react-native-vector-icons/Feather';
 
 export default class CoursesScreen extends Component {
     static navigationOptions = {
@@ -30,7 +31,10 @@ export default class CoursesScreen extends Component {
 
     renderItem = ({ item }) => (
         <View style={styles.courseContainer}>
-            <Text style={styles.courseName}>{item.nome}</Text>
+            <View style={styles.containerName}>
+                <View><Text style={styles.courseName}>{item.nome}</Text></View>
+                <View><Icon name="check" size={22} color="green" /></View>
+            </View>
             <Text style={styles.courseArea}>{item.area}</Text>
 
             <TouchableOpacity style={styles.courseButton} onPress={() => {
@@ -70,6 +74,11 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         padding: 20,
         marginBottom: 20
+    },
+    containerName: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between'
     },
     courseName: {
         fontSize: 18,
