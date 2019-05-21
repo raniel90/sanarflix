@@ -1,6 +1,6 @@
 import api from '../services/api';
 import React, { Component } from 'react'
-import { Text, View, FlatList, StyleSheet } from 'react-native'
+import { Text, View, FlatList, StyleSheet } from 'react-native';
 import ModuleContentList from '../components/ModuleContentList';
 
 export default class ModuleScreen extends Component {
