@@ -31,14 +31,15 @@ export default class ModuleScreen extends Component {
     renderModule = ({ item }) => {
         const { course } = this.props.navigation.state.params;
 
-        return (<View style={styles.moduleContainer}>
-            <Text style={styles.moduleName}>{item.nome}</Text>
+        return (
+            <View style={styles.moduleContainer}>
+                <Text style={styles.moduleName}>{item.nome}</Text>
 
-            <ModuleContentList
-                navigation={this.props.navigation}
-                courseId={course.id}
-                module={item} />
-        </View>
+                <ModuleContentList
+                    navigation={this.props.navigation}
+                    courseId={course.id}
+                    module={item} />
+            </View>
         )
     }
 
