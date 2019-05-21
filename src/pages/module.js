@@ -6,7 +6,7 @@ import ModuleContentList from '../components/ModuleContentList';
 export default class ModuleScreen extends Component {
     static navigationOptions = ({ navigation }) => ({
         title: navigation.state.params.course.nome
-    })
+    });
 
     state = {
         modules: []
@@ -28,13 +28,19 @@ export default class ModuleScreen extends Component {
         this.setState({ modules });
     }
 
-    renderModule = ({ item }) => (
-        <View style={styles.moduleContainer}>
+    renderModule = ({ item }) => {
+        const { course } = this.props.navigation.state.params;
+
+        return (<View style={styles.moduleContainer}>
             <Text style={styles.moduleName}>{item.nome}</Text>
 
-            <ModuleContentList data={item.conteudos}/>
+            <ModuleContentList
+                navigation={this.props.navigation}
+                courseId={course.id}
+                module={item} />
         </View>
-    )
+        )
+    }
 
     render() {
         return (

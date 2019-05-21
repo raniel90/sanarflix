@@ -1,6 +1,7 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import CoursesScreen from './pages/courses';
 import ModuleScreen from './pages/module';
+import ModuleItemScreen from './pages/moduleItem';
 
 const RootStack = createStackNavigator({
     Courses: {
@@ -8,6 +9,9 @@ const RootStack = createStackNavigator({
     },
     Module: {
         screen: ModuleScreen
+    },
+    ModuleItem: {
+        screen: ModuleItemScreen
     },
 }, {
         defaultNavigationOptions: {

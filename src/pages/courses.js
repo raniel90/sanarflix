@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
-import { Text, View, FlatList, TouchableOpacity, StyleSheet } from 'react-native'
 import api from '../services/api';
 import sortBy from 'lodash/sortBy';
-import Icon from 'react-native-vector-icons/Feather';
+import React, { Component } from 'react'
+import { Text, View, FlatList, TouchableOpacity, StyleSheet } from 'react-native'
 
 export default class CoursesScreen extends Component {
     static navigationOptions = {
@@ -31,10 +30,7 @@ export default class CoursesScreen extends Component {
 
     renderItem = ({ item }) => (
         <View style={styles.courseContainer}>
-            <View style={styles.containerName}>
-                <View><Text style={styles.courseName}>{item.nome}</Text></View>
-                <View><Icon name="check" size={22} color="green" /></View>
-            </View>
+            <Text style={styles.courseName}>{item.nome}</Text>
             <Text style={styles.courseArea}>{item.area}</Text>
 
             <TouchableOpacity style={styles.courseButton} onPress={() => {
@@ -81,9 +77,9 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between'
     },
     courseName: {
-        fontSize: 18,
+        fontSize: 22,
         fontWeight: 'bold',
-        color: '#333'
+        color: '#40091D'
     },
     courseArea: {
         fontSize: 16,
@@ -95,7 +91,7 @@ const styles = StyleSheet.create({
         height: 42,
         borderRadius: 5,
         borderWidth: 2,
-        borderColor: '#40091D',
+        borderColor: '#999',
         backgroundColor: 'transparent',
         justifyContent: 'center',
         alignItems: 'center',
@@ -103,7 +99,7 @@ const styles = StyleSheet.create({
     },
     courseButtonText: {
         fontSize: 16,
-        color: '#40091D',
+        color: '#999',
         fontWeight: 'bold'
     }
 });
